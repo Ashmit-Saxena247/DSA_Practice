@@ -1,0 +1,41 @@
+class Solution(object):
+    def searchRange(self, nums, target
+    #finding the first occurance 
+        def first(nums,target):
+            l , r = 0 ,len(nums) - 1
+    #starting with -1 just in case no occurances
+            first = -1
+
+            while(l<=r):
+
+                mid = (l + r) // 2
+                if nums[mid] == target:
+                    first = mid
+                    r = mid -1
+                elif nums[mid] > target:
+                    r = mid - 1
+                elif nums[mid] < target:
+                    l = mid + 1
+            
+            return first
+
+    #Finding the last occurance
+        def last(nums,target):
+            l , r = 0 ,len(nums) -1
+    #starting with -1 just in case no occurances
+            last = -1
+
+            while(l<=r):
+
+                mid = (l + r) // 2
+                if nums[mid] == target:
+                    last = mid
+                    l = mid + 1
+                elif nums[mid] > target:
+                    r = mid - 1
+                elif nums[mid] < target:
+                    l = mid + 1
+            
+            return last
+            
+        return[first(nums,target),last(nums,target)]
