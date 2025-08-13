@@ -1,0 +1,23 @@
+#21ms 12.23 MB
+
+class Solution(object):
+    def isPowerOfThree(self, n):
+        x = 0
+        cube = 1
+
+        while(cube<=n):
+            if(cube==n):
+                return True
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#11ms 12.31MB
+
+class Solution(object):
+    def isPowerOfThree(self, n):
+        if(n<=0):
+            return False
+
+        while(n%3==0):
+            n = n/3
+        
+        return n==1
